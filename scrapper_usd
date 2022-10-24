@@ -1,0 +1,48 @@
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
+import time
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+######################
+brower = webdriver.Chrome(ChromeDriverManager().install())
+brower.get('https://www.tgju.org/archive/sana_real_sell_usd')
+######################
+
+table = brower.find_element_by_id('table-list')
+table1=table.get_attribute('innerText')
+len(table1)
+#table2=list(table1)
+table2=table1.split()
+type(table2)
+
+######################
+
+# importing library
+import numpy as np
+ 
+# initializing list
+lst = table2
+ 
+# converting list to array
+table3 = numpy.asarray(lst).reshape(30,8)
+ 
+# displaying list
+#print ("List:", lst)
+ 
+# displaying array
+print ("arr: ", table3)
+table3.shape
+
+######################
+
+import csv
+
+with open('USD.csv','w') as f:
+    writer = csv.writer(f)
+    writer.writerows(table3)
+    
+    
