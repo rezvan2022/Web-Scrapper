@@ -1,3 +1,5 @@
 # Web-Scrapper
-USD vs IRR from Tgju
+#Python Selenium Webdriver
+All index price  of iran capital market 
+https://tradersarena.ir
 Jupyter NooteBook Python
